@@ -5,21 +5,23 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-# Define Office Deployment Tool XML file path
-$odtFile = Join-Path -Path $PSScriptRoot -ChildPath "OfficeDeployment.xml"
-
-# Check if the ODT file exists
-if (-not (Test-Path $odtFile)) {
-    Write-Host "Error: Office Deployment Tool XML file not found!"
-    exit 1
-}
+# Define Office Deployment Tool XML content
+$odtXml = @"
+<Configuration>
+  <Add SourcePath="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img" OfficeClientEdition="64" Channel="MonthlyChannel" Version="16.0.14323.10000">
+    <Display Level="None" AcceptEULA="TRUE"/>
+    <Property Name="AUTOACTIVATE" Value="1"/>
+    <Property Name="SharedComputerLicensing" Value="1"/>
+  </Add>
+</Configuration>
+"@
 
 # Download and install Office using the Office Deployment Tool
 Write-Host "Downloading and installing Office..."
 $installerPath = Join-Path -Path $env:TEMP -ChildPath "OfficeSetup.exe"
 try {
     Invoke-WebRequest -Uri "https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img" -OutFile $installerPath
-    & $installerPath /configure $odtFile /quiet
+    & $installerPath /configure - (ConvertTo-Json -InputObject $odtXml) /quiet
 }
 catch {
     Write-Host "Error: Failed to download or install Office. Error: $_"
