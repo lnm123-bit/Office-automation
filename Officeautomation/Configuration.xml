@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Add SourcePath="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img" OfficeClientEdition="64" Channel="MonthlyChannel" Version="16.0.14323.10000" PinSourcePath="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img" PinOfficeClientEdition="64" PinChannel="MonthlyChannel" PinVersion="16.0.14323.10000" UpdatePath="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img" OfficeMUVersion="16.0.14326.10000" O365ClientVersion="16.0.14326.20264">
+    <Display Level="None" AcceptEULA="TRUE"/>
+    <Property Name="AUTOACTIVATE" Value="1"/>
+    <Property Name="SharedComputerLicensing" Value="1"/>
+    <Property Name="PinSourcePath" Value="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img"/>
+    <Property Name="PinOfficeClientEdition" Value="64"/>
+    <Property Name="PinChannel" Value="MonthlyChannel"/>
+    <Property Name="PinVersion" Value="16.0.14323.10000"/>
+    <Property Name="UpdatePath" Value="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img"/>
+    <Property Name="OfficeMUVersion" Value="16.0.14326.10000"/>
+    <Property Name="O365ClientVersion" Value="16.0.14326.20264"/>
+    <Property Name="Channel" Value="MonthlyChannel"/>
+    <Property Name="Version" Value="16.0.14323.10000"/>
+    <Property Name="PinningSourcePath" Value="https://officecdn.microsoft.com/api/6.0/office_proplus_x64_en-us.img"/>
+    <Property Name="PinningOfficeClientEdition" Value="64"/>
+    <Property Name="PinningChannel" Value="MonthlyChannel"/>
+    <Property Name="PinningVersion" Value="16.0.14323.10000"/>
+    <Property Name="AIOSetupString" Value="/o `"%TEMP%\OfficeSetup.xml`" /q"/>
+  </Add>
+</Configuration>
